@@ -7,9 +7,13 @@ function populatePage (inventory) {
   for (var i=0; i<inventory.length; i++) {
     counter++;
     var car = inventory[i];
-    car.purchased = "STILL AVAILABLE!";
+    if (car.purchased === false) {
+      car.purchased = "STILL AVAILABLE!";
+    } else if (car.purchased === true) {
+      car.purchased = "SOLD"
+    };
     outputEl.innerHTML += `
-      <div class="col-sm-4" id="cardWrapper--${counter}">
+      <div class="col-sm-4 newDiv" id="cardWrapper--${counter}">
         <div class="center">
           <div>${car.make}</div>
           <div>${car.model}</div>

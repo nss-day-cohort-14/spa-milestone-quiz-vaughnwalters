@@ -4,24 +4,33 @@ var CarLot = (function (events) {
   var cards = document.getElementsByClassName("newDiv");
   var input = document.getElementById("input");
     events.activateEvents = function() {
-      // console.log(cards);
       for (var i = 0; i < cards.length; i++) {
         var card = cards[i];
-        // console.log(card);
+// on click, expand border size, change background color,
+// clear the input element and focus on it
+
+
+// created card click event, call function, pass element clicked on
+// and a color. function willexpand border size change background color,
+
         card.addEventListener('click', function (clickEvent) {
-          console.log(clickEvent);
           var targetDiv = clickEvent.currentTarget;
-          console.log("targetDiv", targetDiv)
-          var color = event.currentTarget.style.borderColor;
-          targetDiv.style.border = `10px solid ${color}`;
-          targetDiv.style.backgroundColor = "gray";
+          events.increaseBorder(targetDiv, "gray");
         });
       }    
     }
   return events;
 })(CarLot);
 
-
+// this works:
+// card.addEventListener('click', function (clickEvent) {
+//           console.log(clickEvent);
+//           var targetDiv = clickEvent.currentTarget;
+//           console.log("targetDiv", targetDiv)
+//           var color = event.currentTarget.style.borderColor;
+//           targetDiv.style.border = `15px solid ${color}`;
+//           targetDiv.style.backgroundColor = "gray";
+//         });
 
 
   // newDiv.addEventListener("click", function (clickEvent) {
