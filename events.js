@@ -2,16 +2,16 @@ console.log("events.js loaded");
 
 var CarLot = (function (events) {
   var cards = document.getElementsByClassName("newDiv");
-  
+  var input = document.getElementById("input");
     events.activateEvents = function() {
       // console.log(cards);
       for (var i = 0; i < cards.length; i++) {
         var card = cards[i];
-        console.log(card);
+        // console.log(card);
         card.addEventListener('click', function (clickEvent) {
-          console.log("click", event.currentTarget.id);
-          targetDiv = clickEvent.currentTarget;
-          console.log(targetDiv);
+          var targetDiv = clickEvent.currentTarget;
+          var color = event.currentTarget.style.borderColor;
+          targetDiv.style.border = `10px solid ${color}`;
         });
       }    
     }
