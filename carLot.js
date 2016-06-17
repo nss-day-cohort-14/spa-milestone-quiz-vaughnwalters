@@ -3,8 +3,9 @@ var CarLot = (function () {
 
   return {
     getInventory: function () {
-
+      return inventory;
     },
+    
     loadInventory: function (callback) {
       var inventoryLoader = new XMLHttpRequest();
       inventoryLoader.open("GET", "inventory.json");
