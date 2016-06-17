@@ -9,9 +9,12 @@ var CarLot = (function (events) {
         var card = cards[i];
         // console.log(card);
         card.addEventListener('click', function (clickEvent) {
+          console.log(clickEvent);
           var targetDiv = clickEvent.currentTarget;
+          console.log("targetDiv", targetDiv)
           var color = event.currentTarget.style.borderColor;
           targetDiv.style.border = `10px solid ${color}`;
+          targetDiv.style.backgroundColor = "gray";
         });
       }    
     }
