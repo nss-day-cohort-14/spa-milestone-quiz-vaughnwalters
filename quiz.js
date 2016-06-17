@@ -1,27 +1,31 @@
 console.log("quiz.js loaded");
 var outputEl = document.getElementById("outputEl")
 function populatePage (inventory) {
+  var counter = null;
   // Loop over the inventory and populate the page
   // build up the string to output to DOM
   for (var i=0; i<inventory.length; i++) {
+    counter++;
     var car = inventory[i];
     car.purchased = "STILL AVAILABLE!";
     outputEl.innerHTML += `
-      <div class="col-sm-4">
+      <div class="col-sm-4" id="cardWrapper--${counter}">
         <div class="center">
           <div>${car.make}</div>
           <div>${car.model}</div>
           <div>${car.year}</div>
           <div>${car.price}</div>
-          <div>${car.color}</div>
+          <div id="carColor--${counter}">${car.color}</div>
           <div>${car.purchased}</div>
-          <div>${car.description}</div>
+          <div id="description--${counter}">${car.description}</div>
         </div>
       </div>
       `
-    console.log(car);
+  // get car color and apply to border color    
+    var color = document.getElementById(`carColor--${counter}`).innerText;
+    var addBorderColor = document.getElementById(`cardWrapper--${counter}`);
+    addBorderColor.style.border = `5px solid ${color}`;
   }
-
 
 
   // Now that the DOM is loaded, establish all the event listeners needed
