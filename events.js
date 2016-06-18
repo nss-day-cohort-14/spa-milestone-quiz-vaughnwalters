@@ -10,17 +10,20 @@ var CarLot = (function (events) {
 // clear the input element and focus on it
 
 
-// created card click event, call function, pass element clicked on
-// and a color. function willexpand border size change background color,
+// created card click event. call function. pass element clicked on
+// and a color. function will expand border size and change background color,
 
         card.addEventListener('click', function (clickEvent) {
           var targetDiv = clickEvent.currentTarget;
+          events.resetValues(targetDiv);
           events.increaseBorder(targetDiv, "gray");
         });
       }    
     }
   return events;
 })(CarLot);
+
+
 
 // this works:
 // card.addEventListener('click', function (clickEvent) {
