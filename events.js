@@ -2,7 +2,7 @@ console.log("events.js loaded");
 
 var CarLot = (function (events) {
   var cards = document.getElementsByClassName("newDiv");
-  var input = document.getElementById("input");
+  var input = document.getElementById("inputBox");
     events.activateEvents = function() {
       for (var i = 0; i < cards.length; i++) {
         var card = cards[i];
@@ -13,14 +13,40 @@ var CarLot = (function (events) {
 // created card click event. call function. pass element clicked on
 // and a color. function will expand border size and change background color,
 
-        card.addEventListener('click', function (clickEvent) {
+// on click of the car element, clear the value of the text 
+// input in the navbar, and put the cursor in the text input.
+        card.addEventListener("click", function (clickEvent) {
           var targetDiv = clickEvent.currentTarget;
           events.resetValues(targetDiv);
           events.increaseBorder(targetDiv, "gray");
+          events.clearInput();
+          events.changeDescription(targetDiv);
+          // add event listener within an event listener?
+          // so, after click, add event listener to input box?
+          input.addEventListener("keyup", function (){
+            console.log("typed in");
+            events.changeDescription(targetDiv);
+          })
         });
+
+        // input.addEventListener("keyup", function(keyupEvent) {
+        //   var targetDiv = keyup.currentTarget;
+        //   console.log(targetDiv);
+        // });
+// add event listener to input field 
+        // When you start typing into the navbar's text input, 
+        // the description of the currently selected car should
+        //  be bound to what you are typing in and match it exactly.
+    //     input.addEventListener("keyup", function(keyupEvent) {
+    //           console.log("click", event.currentTarget.id);
+    // test = event.currentTarget.id;
+    // targetNumberID = test.split("--")[1]
+        //   var  = document.getElementById(`bio--${targetNumberID}`);
+        //   bio.innerHTML = keyupEvent.target.value;
+        // });
       }    
     }
-  return events;
+  return events;  
 })(CarLot);
 
 
