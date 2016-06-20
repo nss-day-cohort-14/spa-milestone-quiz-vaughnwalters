@@ -35,15 +35,25 @@ var CarLot = (function (events) {
 // When you start typing into the navbar's text input, the 
 // description of the currently selected car should be bound
 //  to what you are typing in and match it exactly.
-  events.changeDescription = function(domElClickedOn) {
+  events.changeDescription = function(domElClickedOn, keyUpEvent) {
     // console.log("click", domElClickedOn.id);
     var domElNum = domElClickedOn.id.split("--")[1];
     console.log(domElNum);
+    var description = document.getElementById(`description--${domElNum}`);
+    // console.log(keyUpEvent.target.value);
+    // change innerHTML of bio, got the bio chosen, 
+    // with description.innerHTML but need to get
+    // what is in the input box into the bio
+    // var keyupValue = keyUpEventtarget.value
+    // console.log(keyupValue);
+    console.log(description, keyUpEvent.target.value);
+    description.innerHTML = keyUpEvent.target.value;
+
   };
 
   // event.keyupChange = function () {
   //   var description = document.getElementById(`description--3`);
-    
+
   // }
 
   // keyInputOutput.addEventListener("keyup", function(keyupEvent) {

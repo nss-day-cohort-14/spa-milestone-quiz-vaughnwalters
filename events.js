@@ -20,12 +20,14 @@ var CarLot = (function (events) {
           events.resetValues(targetDiv);
           events.increaseBorder(targetDiv, "gray");
           events.clearInput();
-          events.changeDescription(targetDiv);
-          // add event listener within an event listener?
+          // events.changeDescription(targetDiv);
+          // add event listener within an event listener adding function?
           // so, after click, add event listener to input box?
-          input.addEventListener("keyup", function (){
-            console.log("typed in");
-            events.changeDescription(targetDiv);
+          input.addEventListener("keyup", function (keyupEvent){
+            console.log(">>>>",keyupEvent.target.value);
+
+            events.changeDescription(targetDiv, keyupEvent);
+            console.log(targetDiv, keyupEvent);
           })
         });
 
