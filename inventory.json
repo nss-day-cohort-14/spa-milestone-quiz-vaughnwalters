@@ -1,0 +1,31 @@
+{
+  "inventory": [
+    {
+      "make": "Pontiac",
+      "model": "Trans-Am",
+      "year": "1991",
+      "price": "2500",
+      "color": "Teal",
+      "purchased": false,
+      "description": "Ever wanted to grow a mustache and cruise the drag for high school chicks? This car is for you."
+    },
+    {
+      "make": "Ford",
+      "model": "Ranger",
+      "year": "1992",
+      "price": "500",
+      "color": "Tan",
+      "purchased": true,
+      "description": "This is a great little truck for getting you around town.  Take it to work and back and you're set!"
+    },
+    {
+      "make": "Dodge",
+      "model": "Sprinter",
+      "year": "2006",
+      "price": "2900",
+      "color": "DarkGreen",
+      "purchased": false,
+      "description": "Hey, It has 343K miles, is diesel and still runs great. Might break down but you'll be stoked on it"
+    }
+  ]
+}
