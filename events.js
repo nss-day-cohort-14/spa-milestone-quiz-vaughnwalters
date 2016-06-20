@@ -1,5 +1,7 @@
 console.log("events.js loaded");
 
+var targetDiv;
+
 var CarLot = (function (events) {
   var cards = document.getElementsByClassName("newDiv");
   var input = document.getElementById("inputBox");
@@ -16,20 +18,14 @@ var CarLot = (function (events) {
 // on click of the car element, clear the value of the text 
 // input in the navbar, and put the cursor in the text input.
         card.addEventListener("click", function (clickEvent) {
-          var targetDiv = clickEvent.currentTarget;
+          targetDiv = clickEvent.currentTarget;
           events.resetValues(targetDiv);
           events.increaseBorder(targetDiv, "gray");
           events.clearInput();
           // events.changeDescription(targetDiv);
           // add event listener within an event listener adding function?
           // so, after click, add event listener to input box?
-          input.addEventListener("keyup", function (keyupEvent){
-            console.log(">>>>",keyupEvent.target.value);
-
-            events.changeDescription(targetDiv, keyupEvent);
-            console.log(targetDiv, keyupEvent);
           })
-        });
 
         // input.addEventListener("keyup", function(keyupEvent) {
         //   var targetDiv = keyup.currentTarget;
@@ -47,6 +43,12 @@ var CarLot = (function (events) {
         //   bio.innerHTML = keyupEvent.target.value;
         // });
       }    
+          input.addEventListener("keyup", function (keyupEvent){
+            console.log(">>>>",keyupEvent.target.value);
+
+            events.changeDescription(targetDiv, keyupEvent);
+            console.log(targetDiv, keyupEvent);
+        });
     }
   return events;  
 })(CarLot);
