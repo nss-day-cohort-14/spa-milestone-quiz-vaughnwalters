@@ -1,20 +1,15 @@
-console.log("thirdIIFE.js loaded");
-
-// function to increase border and change bg color on click
-
 var CarLot = (function (events) {
 
-
-
+// on click, expand border size, change background color,
   events.increaseBorder = function (domElClickedOn, colorName){
     var color = event.currentTarget.style.borderColor;
     domElClickedOn.style.border = `15px solid ${color}`;
     domElClickedOn.style.backgroundColor = colorName;
   };
 
+
 // function resets the border thickness and background color 
 // for each car element back to the original values. 
-
   events.resetValues = function() {
     var divs = document.getElementsByClassName("newDiv");
     for (var k=0; k<divs.length; k++) {
@@ -36,31 +31,10 @@ var CarLot = (function (events) {
 // description of the currently selected car should be bound
 //  to what you are typing in and match it exactly.
   events.changeDescription = function(domElClickedOn, keyUpEvent) {
-    // console.log("click", domElClickedOn.id);
     var domElNum = domElClickedOn.id.split("--")[1];
-    console.log(domElNum);
     var description = document.getElementById(`description--${domElNum}`);
-    // console.log(keyUpEvent.target.value);
-    // change innerHTML of bio, got the bio chosen, 
-    // with description.innerHTML but need to get
-    // what is in the input box into the bio
-    // var keyupValue = keyUpEventtarget.value
-    // console.log(keyupValue);
-    console.log(description, keyUpEvent.target.value);
     description.innerHTML = keyUpEvent.target.value;
-
   };
-
-  // event.keyupChange = function () {
-  //   var description = document.getElementById(`description--3`);
-
-  // }
-
-  // keyInputOutput.addEventListener("keyup", function(keyupEvent) {
-  // var bio = document.getElementById(`bio--${targetNumberID}`);
-  // bio.innerHTML = keyupEvent.target.value;
-// });
-
-
+  
   return events;
 })(CarLot);

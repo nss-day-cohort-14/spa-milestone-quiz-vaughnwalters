@@ -1,5 +1,5 @@
 {
-  "cars": [
+  "inventory": [
     {
       "make": "Pontiac",
       "model": "Trans-Am",
@@ -7,7 +7,7 @@
       "price": "2500",
       "color": "Teal",
       "purchased": false,
-      "description": "Ever wanted to grow a mustache and cruise the drag for high school chicks? This is the car for you."
+      "description": "Ever wanted to grow a mustache and cruise the drag for high school chicks? This car is for you."
     },
     {
       "make": "Ford",
@@ -15,7 +15,7 @@
       "year": "1992",
       "price": "500",
       "color": "Tan",
-      "purchased": false,
+      "purchased": true,
       "description": "This is a great little truck for getting you around town.  Take it to work and back and you're set!"
     },
     {
