@@ -7,7 +7,6 @@ var CarLot = (function (events) {
     domElClickedOn.style.backgroundColor = colorName;
   };
 
-
 // function resets the border thickness and background color 
 // for each car element back to the original values. 
   events.resetValues = function() {

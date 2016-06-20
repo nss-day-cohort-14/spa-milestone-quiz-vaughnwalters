@@ -29,7 +29,7 @@ Technical Requirements
  -->
 <!-- The first IIFE should add a public function (e.g. loadInventory) that loads the inventory.json file and stores the inventory in a private variable. It should also expose a public getter to read the array of cars (e.g. getInventory). -->
 
-The second IIFE should augment the original one with a function that creates all of the eventHandlers that you need for the application. Name the function activateEvents.
+<!-- The second IIFE should augment the original one with a function that creates all of the eventHandlers that you need for the application. Name the function activateEvents. -->
 
 <!-- The final IIFE should augment the object with two more functions. One function resets the border thickness and background color for each car element back to the original values.  -->
 <!-- 

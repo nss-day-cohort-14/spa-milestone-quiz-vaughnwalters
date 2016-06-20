@@ -1,6 +1,7 @@
 var outputEl = document.getElementById("outputEl")
 function populatePage (inventory) {
   var counter = null;
+  
 // Loop over the inventory and populate the page
 // build up the string to output to DOM
   for (var i=0; i<inventory.length; i++) {
